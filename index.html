@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>        <html class="no-js ie10"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interview Module</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/Model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/script.js"></script>
+<script src="js/pagination.js"></script>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script>if(Function('/*@cc_on return 10===document.documentMode@*/')()){document.documentElement.className='ie10';}</script>
+<!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
+</head>
+<body>
+<div class="wrapper">
+	<div id="header">
+		<div class="navbar top-nav">
+			<div class="navbar-inner">
+				<div class="container">
+					<ul class="nav">
+						<li><a href="#" class="black logo">Your Logo</a></li>
+					</ul>
+					<ul class="nav pull-right right-menu">
+						<li class="pull-right"><a href="#">Settings</a></li>
+						<li class="pull-right"><a href="#">Get Help</a></li>
+						<li class="pull-right"><a href="#">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner gradient">
+				<div class="container">
+					<ul class="nav">
+						<li><a href="#">Home</a></li>
+						<li class="active"><a href="#">Interviews</a></li>
+						<li><a href="#">Applicants</a></li>
+						<li><a href="#">My Profile</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container minH">
+		<div class="row">
+			<div class="span9"> </div>
+			<div class="span3 text-center"> <span class="">
+				<button class="btn btn-primary newInter right gradient" type="button"><i class="icon-plus-sign"></i>Create a New Interview</button>
+				</span> </div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row page2">
+			<div class="span9 b">
+				<form class="form-horizontal">
+					<fieldset>
+						<div class="control-group">
+							<h2>Give Your Interview a Name</h2>
+							<input id="interTitle" name="interTitle" type="text" placeholder="Enter title here" class="input-xxlarge">
+						</div>
+					</fieldset>
+				</form>
+				<h2>Now Add Your Questions</h2>
+				<table class="table" id="sort">
+					<thead class="gradient">
+						<tr>
+							<th>Question #</th>
+							<th>Question Type</th>
+							<th colspan="2">Question Text</th>
+						</tr>
+					</thead>
+					<tbody id="questions">
+						<tr>
+							<td colspan="3" class="blueText">You dont have any questions yet. Click the <b>+Add Question</b> button to create your first question.</td>
+						</tr>
+						<!-- <tr>
+					<td><span class="badge badge-inverse">1</span></td>
+					<td>Video</td>
+					<td>Lorem Ipsum</td>
+					<td width="100px">
+						<div class="toolbox">
+							<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+							<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+							<div class="toolbar-add" title="Add"><i class="icon-file"></i></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="badge badge-inverse">2</span></td>
+					<td>Video</td>
+					<td>As a best practice, try to match the element for your context to ensure matching cross-browser rendering.</td>
+					<td width="100px">
+						<div class="toolbox">
+							<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+							<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+							<div class="toolbar-add" title="Add"><i class="icon-file"></i></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="badge badge-inverse">3</span></td>
+					<td>Video</td>
+					<td>As atch the element for your context to ensure matching cross-browser rendering.</td>
+					<td width="100px">
+						<div class="toolbox">
+							<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+							<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+							<div class="toolbar-add" title="Add"><i class="icon-file"></i></div>
+						</div>
+					</td>
+				</tr> -->
+					</tbody>
+					<thead class="gradient">
+						<tr>
+							<th colspan="4">&nbsp; </th>
+						</tr>
+					</thead>
+				</table>
+				<span class="pull-right">
+				<button class="btn btn-primary addQuestion gradient" type="button">+ Add Question</button>
+				</span>
+				<div class="clearfix"></div>
+				<table class="hide qForm">
+					<tr>
+						<td colspan="4" class="nopad"><div class="editForm">
+								<div class="formDiv">
+									<div class="pull-right">
+										<div class="formClose" title="Save"><i class="icon-remove"></i></div>
+									</div>
+									<div class="clearfix"></div>
+									<form class="form-horizontal" id="saveEdit" name="saveEdit">
+										<fieldset>
+											<!-- Select Basic -->
+											<div class="control-group">
+												<label class="control-label" for="questionType">Question Type</label>
+												<div class="controls">
+													<select id="question-type" name="questionType" class="input-large">
+														<option value="video">Video</option>
+														<option value="audio">Audio</option>
+														<option value="picture">Picture</option>
+													</select>
+												</div>
+											</div>
+
+											<!-- Appended Input-->
+											<div class="control-group">
+												<label class="control-label" for="responseTime">Response Time</label>
+												<div class="controls">
+													<div class="input-append">
+														<input id="responseTime" name="responseTime" class="input-small" placeholder="" type="text" type="number">
+														<span class="add-on">seconds</span> </div>
+													<em><small>The amount of time that the applicant has to respond to the question</small></em> </div>
+											</div><!-- Textarea -->
+											<div class="control-group">
+												<label class="control-label" for="textarea">Question Text</label>
+												<div class="controls">
+													<textarea id="quesionText" name="questionText" cols="200" rows="5"> </textarea>
+												</div>
+											</div><!-- Multiple Radios (inline) -->
+											<div class="control-group">
+												<label class="control-label" for="radios">Unlimited Attempts?</label>
+												<div class="controls">
+													<label class="radio inline" for="radios-0">
+														<input type="radio" name="attempts" id="radios-0" value="Yes" checked="checked">
+														Yes </label>
+													<label class="radio inline last" for="radios-1">
+														<input type="radio" name="attempts" id="radios-1" value="No">
+														No </label>
+													<div class="input-append">
+														<input id="attempCount" name="attemptCount" class="input-small" placeholder="" type="text" type="number">
+														<span class="add-on">attempts</span> </div>
+													<em><small>Limit the applicant's attempts at answering the question</small></em> </div>
+											</div>
+
+											<!-- Multiple Radios (inline) -->
+											<div class="control-group">
+												<label class="control-label" for="radios">Start Automatically?</label>
+												<div class="controls">
+													<label class="radio inline" for="radios-2">
+														<input type="radio" name="startAuto" id="radios-2" value="Yes" checked="checked">
+														Yes </label>
+													<label class="radio inline last" for="radios-3">
+														<input type="radio" name="startAuto" id="radios-3" value="No">
+														No </label>
+													<div class="input-prepend input-append"> <span class="add-on">start after</span>
+														<input id="attemptAfter" name="attemptAfter" class="input-mini" placeholder="" type="text" type="number">
+														<span class="add-on">attempts</span> </div>
+													<em><small>Start next question automatically(after 'x' seconds)</small></em> </div>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+								<div class="text-center minus">
+									<div class="toolbar-edit" title="Edit"><i class="icon-minus icon-white"></i> &nbsp; collapse</div>
+								</div>
+							</div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="span2 b"> <span class="pull-right text-center">
+				<button class="btn btn-link cancel" type="button">Back</button>
+				<div class="pub-me">
+					<p>To publish your interview, click the <strong>Publish Me</strong> buton. You can edit it until an applicant starts taking the interview.</p>
+					<button class="btn btn-primary btn-success publish" type="button">Publish Me</button>
+				</div>
+				</span> </div>
+		</div><!-- row -->
+		<div class="row page1">
+			<div class="span12">
+				<div class="int-descrip">
+					<h2>My Interviews</h2>
+					<p>Extensive mining caused a large cave-in on December 19, 1899, that destroyed equipment and collapsed shafts within Joppenbergh. During the late 1930s, Joppenbergh became the site of several ski jumping competitions, which continued until the early 1940s. Skiing began again in the 1960s, when a new slope was built on the mountain, and the revived competitions continued until 1971. In March 2011, the Open Space Institute offered to purchase Joppenbergh and sell it to the town.</p>
+				</div>
+				<table class="table table-bordered table-striped" id="interList">
+					<thead>
+						<tr>
+							<th>Interview</th>
+							<th>Owner / Department</th>
+							<th>Last Modified</th>
+							<th>Status</th>
+							<th>New Applications / Total</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="interviews">
+						<!-- <tr>
+							<td>Graphic Designer</td>
+							<td>Bob Smith / Design</td>
+							<td> Apr 5 2013 3:15 PM</td>
+							<td>Open</td>
+							<td>5 new (10 total)</td>
+							<td>
+								<div class="toolbox">
+									<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+									<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+									<div class="toolbar-add" title="Add"><i class="icon-file"></i></div>
+								</div>
+							</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- container -->
+	<div class="push"></div>
+</div><!-- wrapper -->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<ul class="fnav span9">
+				<li><strong>Help:</strong></li>
+				<li><a href="#">FAQs and Tutorials</a></li>
+				<li><a href="#">Contact Support</a></li>
+			</ul>
+			<ul class="fnav social span3">
+				<li><strong>Follow Us:</strong></li>
+				<li><a class="facebook" href="#">Facebook</a></li>
+				<li><a class="linkedin" href="#">Linkedin</a></li>
+				<li><a class="twitter" href="#">Twitter</a></li>
+				<li><a class="googleplus" href="#">Google Plus</a></li>
+			</ul>
+		</div>
+		<div class="row">
+			<ul class="fnav fnav2">
+				<li><strong>About Us:</strong></li>
+				<li><a href="#">About the Company</a></li>
+				<li><a href="#">Management Team</a></li>
+				<li><a href="#">Newsroom</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Jobs</a></li>
+				<li><a href="#">Sitemap</a></li>
+			</ul>
+		</div>
+		<hr class="inset">
+		<div class="row fnav copy">
+			<div class="span9">&copy; 2013 Your Company, Inc. All Rights Reserved.</div>
+			<div class="span3 terms right">Terms of Service . Privacy Policy</div>
+		</div>
+	</div>
+</div>
+<div class="linkC">Link Copied</div>
+<script id="questionsTemplate" type=pc/template>
+	<tr>
+		<td width="100px" class="question-col" ><span class="badge badge-inverse">{{index}}</span></td>
+		<td width="100px" class="question-col" style="text-align:center">{{type}}</td>
+		<td class="question-col">{{text}}</td>
+		<td width="100px" >
+			<div class="toolbox">
+				<div class="inVal">{{id}}</div>
+				<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+				<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+				<div class="toolbar-add" title="Add"><i class="icon-file"></i></div>
+			</div>
+		</td>
+	</tr>
+</script>
+<script id="interviewsTemplate" type=pc/template>
+	<tr>
+		<td><a href="javascript:showInterview({{id}});">{{name}}</a></td>
+		<td>{{owner}}</td>
+		<td>{{timestamp}}</td>
+		<td>{{status}}</td>
+		<td>{{applicants}}</td>
+		<td width="100px">
+			<div class="toolbox">
+				<div class="inVal">{{id}}</div>
+				<div class="toolbar-edit" title="Edit"><i class="icon-pencil"></i></div>
+				<div class="toolbar-delete" title="Delete"><i class="icon-trash"></i></div>
+				<div class="toolbar-add" title="Copy"><i class="icon-file"></i></div>
+				<div class="toolbar-link" title="Link"><i class="icon-resize-small"></i></div>
+			</div>
+		</td>
+	</tr>
+</script>
+<script type="text/javascript" charset="utf-8">
+
+
+    var fixHelperModified = function(e, tr) {
+	    var $originals = tr.children();
+	    var $helper = tr.clone();
+	    $helper.children().each(function(index) {
+	        $(this).width($originals.eq(index).width())
+	    });
+	    return $helper;
+	},
+	updateIndex = function(e, ui) {
+
+	        $('td span.badge', ui.item.parent()).each(function (i) {
+	            console.log($(this).html());
+	            currInt.questions[$(this).html()-1].position = i;
+	            currInt.sortQuestions();
+	            $(this).html(i + 1);
+
+	        });
+	        View.renderQuestions(currInt);
+	 };
+
+	$("#sort tbody").sortable({
+	    helper: fixHelperModified,
+	    stop: updateIndex
+	}).disableSelection();
+</script>
+</body>
+</html>
