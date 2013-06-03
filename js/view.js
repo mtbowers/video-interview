@@ -1,21 +1,21 @@
 var View = {};
 
-View.renderQuestions = function(interviewObject){
-	var template = $.trim( $('#questionsTemplate').html() ),
-	frag = '';
-	$.each( interviewObject.questions, function( index, question ) {
+View.renderQuestions = function(interviewObject) {
+    var template = $.trim($('#questionsTemplate').html()),
+    frag = '';
+	$.each(interviewObject.questions, function(index,question ) {
 		frag +=
-			template.replace( /{{index}}/ig, index+1 )
-					.replace( /{{type}}/ig, question.type )
-					.replace( /{{text}}/ig, question.text )		
-					.replace( /{{id}}/ig, index );		
+            template.replace(/{{index}}/ig, index+1 )
+					.replace(/{{type}}/ig, question.type )
+					.replace(/{{text}}/ig, question.text )
+					.replace(/{{id}}/ig, index );
 	});
 	if(interviewObject.questions.length > 0)
 		document.getElementById('questions').innerHTML = frag;
-	else	
+	else
 		document.getElementById('questions').innerHTML = '<tr><td colspan="3" class="blueText">You dont have any questions yet. Click the <b>+Add Question</b> button to create your first question.</td></tr>';
-	
-		
+
+
 }
 
 View.renderInterviews = function(interviewObject){

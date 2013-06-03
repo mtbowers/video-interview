@@ -7,7 +7,12 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf'),
+     url('Sansation_Light.eot'); /* IE9 */
+}
 .clearfix {
   *zoom: 1;
 }
@@ -223,15 +228,15 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
 }
 
 a {
-  color: #0088cc;
+  color: #0098D6;
   text-decoration: none;
 }
 
@@ -308,6 +313,10 @@ a:focus {
   width: 700px;
 }
 
+.span9.b {
+  width: 740px;
+}
+
 .span8 {
   width: 620px;
 }
@@ -330,6 +339,10 @@ a:focus {
 
 .span3 {
   width: 220px;
+}
+
+.span2.b {
+  width: 180px;
 }
 
 .span2 {
@@ -660,7 +673,7 @@ p {
 }
 
 small {
-  font-size: 85%;
+  font-size: 72%;
 }
 
 strong {
@@ -739,11 +752,11 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: inherit;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility;
+  color: #4E4E4E;
 }
 
 h1 small,
@@ -768,11 +781,12 @@ h1 {
 }
 
 h2 {
-  font-size: 31.5px;
+  font-size: 21.5px;
+  font-weight: normal;
 }
 
 h3 {
-  font-size: 24.5px;
+  font-size: 23.5px;
 }
 
 h4 {
@@ -1065,7 +1079,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 label {
@@ -1961,7 +1975,7 @@ legend + .control-group {
 
 .form-horizontal .control-label {
   float: left;
-  width: 160px;
+  width: 133px;
   padding-top: 5px;
   text-align: right;
 }
@@ -1969,7 +1983,7 @@ legend + .control-group {
 .form-horizontal .controls {
   *display: inline-block;
   *padding-left: 20px;
-  margin-left: 180px;
+  margin-left: 149px;
   *margin-left: 0;
 }
 
@@ -2631,6 +2645,14 @@ table th[class*="span"],
 
 .icon-plus-sign {
   background-position: 0 -96px;
+  height: 16px;
+  width: 16px;
+  margin-top: 0px;
+  margin-right: 9px;
+  vertical-align: middle;
+  position: absolute;
+  left: 7px;
+  top: 6px;
 }
 
 .icon-minus-sign {
@@ -3198,10 +3220,10 @@ button.close {
 .btn {
   display: inline-block;
   *display: inline;
-  padding: 4px 12px;
+  padding: 4px 8px 4px 9px;
   margin-bottom: 0;
   *margin-left: .3em;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   color: #333333;
   text-align: center;
@@ -3221,9 +3243,8 @@ button.close {
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom-color: #b3b3b3;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   *zoom: 1;
@@ -3239,7 +3260,6 @@ button.close {
 .btn.disabled,
 .btn[disabled] {
   color: #333333;
-  background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
 
@@ -3256,7 +3276,7 @@ button.close {
 .btn:focus {
   color: #333333;
   text-decoration: none;
-  background-position: 0 -15px;
+  background-position: 0 -32px;
   -webkit-transition: background-position 0.1s linear;
      -moz-transition: background-position 0.1s linear;
        -o-transition: background-position 0.1s linear;
@@ -3372,6 +3392,8 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  font-size: 12px !important;
+  line-height: normal;
 }
 
 .btn-primary:hover,
@@ -3381,7 +3403,6 @@ input[type="button"].btn-block {
 .btn-primary.disabled,
 .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
   *background-color: #003bb3;
 }
 
@@ -4370,25 +4391,14 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inner {
-  min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
-  background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  background-color: #b1b1b1;
+
+
   *zoom: 1;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+
+
 }
 
 .navbar-inner:before,
@@ -4519,7 +4529,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -4612,7 +4622,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 15px 10px;
+  padding: 6px 15px;
   color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
@@ -4791,15 +4801,19 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .navbar-inner {
-  background-color: #1b1b1b;
-  background-image: -moz-linear-gradient(top, #222222, #111111);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-  background-image: -webkit-linear-gradient(top, #222222, #111111);
-  background-image: -o-linear-gradient(top, #222222, #111111);
-  background-image: linear-gradient(to bottom, #222222, #111111);
   background-repeat: repeat-x;
-  border-color: #252525;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+ background: #4d4d4d; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRkNGQ0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMjAyMDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #4d4d4d 0%, #020202 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4d4d4d), color-stop(100%,#020202)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4d4d4d 0%,#020202 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4d4d4d 0%,#020202 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4d4d4d 0%,#020202 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #4d4d4d 0%,#020202 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d4d4d', endColorstr='#020202',GradientType=0 ); /* IE6-8 */
+;
+  border: none;
 }
 
 .navbar-inverse .brand,
@@ -5649,11 +5663,16 @@ a.thumbnail:focus {
 }
 
 .badge {
-  padding-right: 9px;
-  padding-left: 9px;
-  -webkit-border-radius: 9px;
+  padding: 9px;
      -moz-border-radius: 9px;
-          border-radius: 9px;
+
+  border-radius: 13px;
+  height: 6px;
+  line-height: 7px;
+  vertical-align: middle;
+  margin: auto 20px;
+  text-align: center;
+  width: 6px;
 }
 
 .label:empty,

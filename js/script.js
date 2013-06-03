@@ -1,4 +1,4 @@
-var currInt = 0, currQ = 0;
+var currInt = 0, currQ = -1, ob;
 $(function() {
         d = Interview.getAll();
         View.renderInterviews(d);
@@ -15,7 +15,23 @@ $(function() {
 			var id = obj.parent().parent().children(".inVal").html();
 			showInterview(id)
 		});
-		
+		$("#interviews").delegate("i.icon-file",'click', function(e) {
+			var obj = $(this);
+			var id = obj.parent().parent().children(".inVal").html();
+			var newInt = Interview.getByID(id);
+			//newInt = Interview.getByID(id);
+			nI = new Interview;
+			nI.name = newInt.name
+			nI.questions = newInt.questions
+			console.log("new "+nI.id)
+			//var iid = nI.id;
+			//$.extend(nI,newInt);
+			//nI.id = iid;
+			nI.save();
+			ob = nI;
+			console.log("old "+nI.id)
+			showInterview(nI.id)
+		});
 
 		$("#interviews").delegate("i.icon-trash",'click', function(e) {
 			
@@ -54,7 +70,7 @@ $(function() {
 								'aLengthMenu': [3,5,10,20],
 			});
 			
-			currInt = 0;currQ = 0;
+			currInt = 0;currQ = -1;
 		});
         $(".cancel").click(function() {
 			$(".page2").hide();
@@ -69,7 +85,7 @@ $(function() {
 								'aLengthMenu': [3,5,10,20],
 			});
 						
-			currInt = 0;currQ = 0;
+			currInt = 0;currQ = -1;
 		});
 		
         $(".newInter").click(function() {
@@ -89,7 +105,7 @@ $(function() {
 				
 				saveQuestion();
 				    $('#sort .editForm').parent().parent().remove();
-				    currQ = 0;
+				    currQ = -1;
 					currInt.save();
 					View.renderQuestions(currInt);
 					setIcons()
@@ -102,11 +118,13 @@ $(function() {
 					
 					$('.formClose, .minus').hide();
 					//$("#sort tbody").after($(".qForm").children().children().clone());
+					console.log();
 					$(".qForm").children().children().clone().appendTo($("#sort tbody#questions"));
+					
 					$("#sort .editForm .icon-remove").click(function() {
 						var obj = $(this);
 						obj.parent().parent().parent().parent().parent().parent().parent().remove();
-						currQ = 0;
+						currQ = -1;
 						currInt.save();
 						View.renderQuestions(currInt);
 						setIcons()
@@ -123,17 +141,20 @@ $(function() {
 			
 		});
 		
+		$(".toolbar-link").click(function() {
+			copyLink();
+		});
+		
 });
 
 function setIcons(){
 		
 		$("#sort").delegate("i.icon-pencil",'click', function(e) {
 			var obj = $(this);
-			var id = obj.parent().parent().children(".inVal").html();
+			var id = parseInt(obj.parent().parent().children(".inVal").html());
 			$("#sort .editForm").parent().remove();
-			//console.log(obj.parent().parent().children(".inVal").html())
-			//$(".qForm").children().children().clone().appendTo(obj.parent().parent().parent().parent().parent());
-			obj.parent().parent().parent().parent().parent().after($(".qForm").children().children().clone());
+
+			obj.parent().parent().parent().parent().after($(".qForm").children().children().clone());
 			$("#sort .editForm").hide().slideDown(500);
 			currQ = id;
 			setForm(id);
@@ -141,9 +162,12 @@ function setIcons(){
 				var obj = $(this);
 				
 				 $('#sort .editForm').slideUp(500, function() {
+				    saveQuestion();
+				    currInt.save();
+				    
 				    obj.parent().parent().parent().parent().parent().parent().remove();
-				    currQ = 0;
-					currInt.save();
+				    currQ = -1;
+					
 					View.renderQuestions(currInt);
 					setIcons()
 				  });
@@ -153,9 +177,11 @@ function setIcons(){
 			$("#sort .minus").click(function() {
 				var obj = $(this);
 				$('#sort .editForm').slideUp(500, function() {
-					obj.parent().parent().parent().remove();
-					currQ = 0;
+					saveQuestion();
 					currInt.save();
+					obj.parent().parent().parent().remove();
+					currQ = -1;
+					
 					View.renderQuestions(currInt);
 					setIcons()
 				});
@@ -174,7 +200,53 @@ function setIcons(){
 			
 			View.renderQuestions(currInt);
 			currInt.save()
-			currQ = 0;
+			currQ = -1;
+			e.stopImmediatePropagation();
+		});
+		
+		$("#questions").delegate("i.icon-file",'click', function(e) {
+			var obj = $(this);
+			var id = obj.parent().parent().children(".inVal").html();
+			var newQ = new Object();
+			$.extend(newQ,currInt.questions[id])
+			currInt.questions.push(newQ);
+			currQ = currInt.questions.length - 1;
+			//currInt.save();
+			console.log(currQ);
+			
+			$("#sort .editForm").parent().remove();
+
+			obj.parent().parent().parent().parent().parent().after($(".qForm").children().children().clone());
+			$("#sort .editForm").hide().slideDown(500);
+			setForm(currQ);
+			$("#sort .editForm .icon-remove").click(function() {
+				var obj = $(this);
+				
+				 $('#sort .editForm').slideUp(500, function() {
+				    saveQuestion();
+				    currInt.save();
+				    
+				    obj.parent().parent().parent().parent().parent().parent().remove();
+				    currQ = -1;
+					
+					View.renderQuestions(currInt);
+					setIcons()
+				  });
+				
+				
+			});
+			$("#sort .minus").click(function() {
+				var obj = $(this);
+				$('#sort .editForm').slideUp(500, function() {
+					saveQuestion();
+					currInt.save();
+					obj.parent().parent().parent().remove();
+					currQ = -1;
+					
+					View.renderQuestions(currInt);
+					setIcons()
+				});
+			});
 			e.stopImmediatePropagation();
 		});
 		
@@ -200,7 +272,7 @@ function showInterview(id){
 
 function saveQuestion(){
 	
-	if(!currQ){
+	if(currQ == -1){
 		var q = {
 				type: $('#question-type').val(),
 				position:currInt.questions.length,
@@ -254,4 +326,12 @@ function setForm(idm){
 		  	//currQ = 0;
 		  	console.log("succ")
 	});
+}
+
+function copyLink(){
+	$(".linkC").fadeIn(300);
+	setTimeout(hideLink,1000);
+}
+function hideLink(){
+	$(".linkC").fadeOut(300)
 }

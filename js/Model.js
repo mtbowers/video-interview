@@ -8,7 +8,7 @@ var Interview = function(config){
 	this.timestamp = (new Date).toUTCString();
 	this.owner = config.owner ? config.owner : "Admin";
 	this.name= config.name ? config.name : "generic";
-	this.status = config.status ? config.status : 0;
+	this.status = config.status ? config.status : 1;
 	this.applicants = config.applicants? config.applicants : 0;
 	this.questions = config.questions? config.question: [
 /*
