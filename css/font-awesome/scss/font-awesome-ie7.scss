@@ -1,0 +1,294 @@
+/*!
+ *  Font Awesome 3.2.1
+ *  the iconic font designed for Bootstrap
+ *  ------------------------------------------------------------------------------
+ *  The full suite of pictographic icons, examples, and documentation can be
+ *  found at http://fontawesome.io.  Stay up to date on Twitter at
+ *  http://twitter.com/fontawesome.
+ *
+ *  License
+ *  ------------------------------------------------------------------------------
+ *  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL
+ *  - Font Awesome CSS, LESS, and SASS files are licensed under MIT License -
+ *    http://opensource.org/licenses/mit-license.html
+ *  - Font Awesome documentation licensed under CC BY 3.0 -
+ *    http://creativecommons.org/licenses/by/3.0/
+ *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+ *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+ *
+ *  Author - Dave Gandy
+ *  ------------------------------------------------------------------------------
+ *  Email: dave@fontawesome.io
+ *  Twitter: http://twitter.com/davegandy
+ *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
+ */
+
+.icon-large {
+  font-size: (4em/3);
+  margin-top: -4px;
+  padding-top: 3px;
+  margin-bottom: -4px;
+  padding-bottom: 3px;
+  vertical-align: middle;
+}
+
+.nav {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    vertical-align: inherit;
+    margin-top: -4px;
+    padding-top: 3px;
+    margin-bottom: -4px;
+    padding-bottom: 3px;
+    &.icon-large {
+      vertical-align: -25%;
+    }
+  }
+}
+
+.nav-pills, .nav-tabs {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &.icon-large {
+      line-height: .75em;
+      margin-top: -7px;
+      padding-top: 5px;
+      margin-bottom: -5px;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.btn {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &.pull-left, &.pull-right { vertical-align: inherit; }
+    &.icon-large {
+      margin-top: -.5em;
+    }
+  }
+}
+
+a [class^="icon-"],
+a [class*=" icon-"] {
+  cursor: pointer;
+}
+
+@mixin ie7icon($inner) { *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '#{$inner}'); }
+
+
+.icon-glass {
+  @include ie7icon('&#xf000;');
+}
+
+
+.icon-music {
+  @include ie7icon('&#xf001;');
+}
+
+
+.icon-search {
+  @include ie7icon('&#xf002;');
+}
+
+
+.icon-envelope-alt {
+  @include ie7icon('&#xf003;');
+}
+
+
+.icon-heart {
+  @include ie7icon('&#xf004;');
+}
+
+
+.icon-star {
+  @include ie7icon('&#xf005;');
+}
+
+
+.icon-star-empty {
+  @include ie7icon('&#xf006;');
+}
+
+
+.icon-user {
+  @include ie7icon('&#xf007;');
+}
+
+
+.icon-film {
+  @include ie7icon('&#xf008;');
+}
+
+
+.icon-th-large {
+  @include ie7icon('&#xf009;');
+}
+
+
+.icon-th {
+  @include ie7icon('&#xf00a;');
+}
+
+
+.icon-th-list {
+  @include ie7icon('&#xf00b;');
+}
+
+
+.icon-ok {
+  @include ie7icon('&#xf00c;');
+}
+
+
+.icon-remove {
+  @include ie7icon('&#xf00d;');
+}
+
+
+.icon-zoom-in {
+  @include ie7icon('&#xf00e;');
+}
+
+
+.icon-zoom-out {
+  @include ie7icon('&#xf010;');
+}
+
+
+.icon-off {
+  @include ie7icon('&#xf011;');
+}
+
+.icon-power-off {
+  @include ie7icon('&#xf011;');
+}
+
+
+.icon-signal {
+  @include ie7icon('&#xf012;');
+}
+
+
+.icon-cog {
+  @include ie7icon('&#xf013;');
+}
+
+.icon-gear {
+  @include ie7icon('&#xf013;');
+}
+
+
+.icon-trash {
+  @include ie7icon('&#xf014;');
+}
+
+
+.icon-home {
+  @include ie7icon('&#xf015;');
+}
+
+
+.icon-file-alt {
+  @include ie7icon('&#xf016;');
+}
+
+
+.icon-time {
+  @include ie7icon('&#xf017;');
+}
+
+
+.icon-road {
+  @include ie7icon('&#xf018;');
+}
+
+
+.icon-download-alt {
+  @include ie7icon('&#xf019;');
+}
+
+
+.icon-download {
+  @include ie7icon('&#xf01a;');
+}
+
+
+.icon-upload {
+  @include ie7icon('&#xf01b;');
+}
+
+
+.icon-inbox {
+  @include ie7icon('&#xf01c;');
+}
+
+
+.icon-play-circle {
+  @include ie7icon('&#xf01d;');
+}
+
+
+.icon-repeat {
+  @include ie7icon('&#xf01e;');
+}
+
+.icon-rotate-right {
+  @include ie7icon('&#xf01e;');
+}
+
+
+.icon-refresh {
+  @include ie7icon('&#xf021;');
+}
+
+
+.icon-list-alt {
+  @include ie7icon('&#xf022;');
+}
+
+
+.icon-lock {
+  @include ie7icon('&#xf023;');
+}
+
+
+.icon-flag {
+  @include ie7icon('&#xf024;');
+}
+
+
+.icon-headphones {
+  @include ie7icon('&#xf025;');
+}
+
+
+.icon-volume-off {
+  @include ie7icon('&#xf026;');
+}
+
+
+.icon-volume-down {
+  @include ie7icon('&#xf027;');
+}
+
+
+.icon-volume-up {
+  @include ie7icon('&#xf028;');
+}
+
+
+.icon-qrcode {
+  @include ie7icon('&#xf029;');
+}
+
+
+.icon-barcode {
+  @include ie7icon('&#xf02a;');
+}
+
+
+.icon-tag {
+  @include ie7icon('&#xf0

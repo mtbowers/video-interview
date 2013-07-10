@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>        <html class="no-js ie10"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interview Module</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+<link href="video-js/video-js.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div id="header">
+		<div class="navbar top-nav">
+			<div class="navbar-inner">
+				<div class="container">
+					<ul class="nav">
+						<li><a href="#" class="black logo">Your Logo</a></li>
+					</ul>
+					<ul class="nav pull-right right-menu">
+						<li class="pull-right"><a href="#">Settings</a></li>
+						<li class="pull-right"><a href="#">Get Help</a></li>
+						<li class="pull-right"><a href="#">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner gradient">
+				<div class="container">
+					<ul class="nav">
+						<li><a href="#">Home</a></li>
+						<li class="active"><a href="#">Interviews</a></li>
+						<li><a href="#">Applicants</a></li>
+						<li><a href="#">My Profile</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h2>Interview: Graphic Designer</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div id="interview" class="span8">
+				<form id="search-form" class="form-search form-horizontal pull-right">
+				    <div class="input-append">
+				        <input type="text" class="search-query" placeholder="Search">
+				        <button type="submit" class="btn"><i class="icon-search"></i></button>
+				    </div>
+				</form>
+				<p><strong>Candidates: 5 New</strong> (10 Total)</p>
+				<p><strong>Interview Status:</strong> Open <a href="">Close</a></p>
+				
+				<div id="Responses" class="responses-container column">
+					<div class="row-fluid">
+						<div class="span12">
+								<span class="name">Jerod Andrius Venema</span>
+								<p class="center"><span class="status">Applied 6/3/2013 12:20pm PST</span></p>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span4 contact-details">
+							<h3>Contact Details</h3><br />
+							999 W Citrus Ave #12<br />
+							Los Angeles, CA 90038<br />
+							<a href="mailto:">markthomp@gmail.com</a>
+						</div>
+						<div class="span4 your-rating">
+							<h3>Your Rating</h3><br />
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							</span>
+						</div>
+						<div class="span4 your-recommendation">
+							<h3>Your Recommendation</h3><br />
+							<div class="btn-group">
+							  <button class="btn">Yes</button>
+							  <button class="btn">No</button>
+							  <button class="btn">Maybe</button>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row-fluid">
+						<div class="span12">
+							<div id="IndividualResponsePager" class="pagination pagination-medium pull-right">
+							  <ul>
+							    <li class="active"><a href="#IndividualResponse1" data-toggle="tab">1</a></li>
+							    <li><a href="#IndividualResponse2" data-toggle="tab">2</a></li>
+							    <li><a href="#IndividualResponse3" data-toggle="tab">3</a></li>
+							    <li><a href="#IndividualResponse4" data-toggle="tab">4</a></li>
+							  </ul>
+							</div>
+							<div class="span6">
+								<ul id="ResponseType" class="nav nav-pills">
+									<li id="ResponseType1" class="active">
+										<a href="#AggregateVideo" data-toggle="tab">Aggregate Video</a>
+									</li>
+									<li id="ResponseType2"> 
+										<a href="#IndividualResponses" data-toggle="tab">Individual Responses</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane active" id="AggregateVideo">
+							<p class="title">This video combines all of the candidate's individual responses.</p>
+							<div class="row-fluid">
+								<div class="span12">
+									<video id="example_video_1" class="video-js vjs-default-skin"
+									  controls preload="auto" width="570" height="320"
+									  poster="http://video-js.zencoder.com/oceans-clip.png"
+									  data-setup='{"example_option":true}'>
+									 <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+									 <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+									 <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+									</video>
+								</div>
+							</div>
+						</div><!-- /AggregateVideo -->
+					
+					<div class="tab-pane fade" id="IndividualResponses">
+						<div class="row-fluid">
+							<div class="span2">
+								<ul class="pager">
+								  <li class=""><a id="prevQuestion" href="#" data-toggle="tab">Previous</a></li>
+								</ul>
+							</div>
+							<div class="span8">
+								<ul id="QuestionPicker" class="nav nav-tabs">
+									<li class="dropdown active pull-right">
+									  <a href="#" class="dropdown-toggle question-title" data-toggle="dropdown">Tell us why you're an awesome human being <b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li class="active response-tab"><a href="#IndividualResponse1" data-toggle="tab">Tell us why you're an awesome human being</a></li>
+											<li class="response-tab"><a href="#IndividualResponse2" data-toggle="tab">What level of Photoshop are you?</a></li>
+											<li class="response-tab"><a href="#IndividualResponse3" data-toggle="tab">Another Item</a></li>
+								        </ul>
+									</li>
+								</ul>
+							</div>
+							<div class="span2">
+								<ul class="pager">
+								  <li class="pull-right"><a id="nextQuestion" href="#" data-toggle="tab">Next</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane active" id="IndividualResponse1">
+								<div class="row-fluid">
+									<div class="span12">
+										<video id="example_video_1" class="video-js vjs-default-skin"
+										  controls preload="auto" width="570" height="320"
+										  poster="http://video-js.zencoder.com/oceans-clip.png"
+										  data-setup='{"example_option":true}'>
+										 <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+										 <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+										 <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+										</video>
+									</div>
+								</div>
+								<hr />
+							</div><!-- /#IndividualResponse1 -->
+							<div class="tab-pane fade" id="IndividualResponse2">
+								<div class="row-fluid">
+									<div class="span8 offset2">
+										<label class="radio">
+										  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+										  Beginner (Less than 1 year)
+										</label>
+										<label class="radio">
+										  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+										  Novice (1-2 Years)
+										</label>
+										<label class="radio">
+										  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+										  Intermediate (2-3 years)
+										</label>
+										<label class="radio">
+										  <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+										  Expert (2-3 years)
+										</label>
+									</div>
+								</div>
+								<hr />
+							</div><!-- /#IndividualResponse2 -->
+							<div class="tab-pane fade" id="IndividualResponse3">
+								<div class="row-fluid">
+									<div class="span8 offset2">
+									<p>Testing the nav tab for selecting questions</p>
+									</div>
+								</div>
+								<hr />
+							</div><!-- /#IndividualResponse3 -->
+						</div><!-- tab-content -->
+					</div><!-- /#IndividualResponses -->
+					</div><!-- /tab-content -->
+					
+					<div id="Discussion">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="discussion-comment">
+									<div class="row-fluid">
+										<div class="span2">
+											<img src="http://placehold.it/80x80">
+										</div>
+										<div class="span10"> 
+											<p><a href="#">John Doe</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse ut purus</p>
+										</div>
+									</div>
+								</div>
+								<div class="discussion-comment">
+									<div class="row-fluid">
+										<div class="span2">
+											<img src="http://placehold.it/150x150">
+										</div>
+										<div class="span10">
+											<input type="text" class="input-block-level" placeholder="Write a comment...">
+										</div>
+									</div>
+								</div>
+							</div><!-- /span8 -->
+						</div><!--/row-fluid -->
+					</div><!-- /#Discussion -->
+					
+				</div><!-- /#Responses -->
+					
+			</div><!-- /span9 -->
+			<div id="SidebarRight" class="span4">
+				<div class="btn-group">
+				  <button class="btn active">Newest</button>
+				  <button class="btn">Rating</button>
+				  <button class="btn">Recommendation</button>
+				</div>
+				<div id="UserList" class="column">
+					<div id="User1" class="row-fluid user active-interview">
+						<div class="span6">
+							<img src="img/mark-thompson.png"> 
+						</div>
+						<div class="span6">
+							<p>
+								Mark Thompson<br /> 
+								Applied 6-3-2013<br />
+							</p> 
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							</span>
+						</div>
+					</div><!-- /row -->
+					<div id="User2" class="row-fluid user">
+						<div class="span6">
+							<img src="img/don-johnson.png"> 
+						</div>
+						<div class="span6">
+							<p>
+								Don Johnson<br /> 
+								Applied 6-3-2013<br />
+								Not Recommended<br />
+							</p> 
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User3" class="row-fluid user">
+						<div class="span6">	
+							<img src="img/kate-williams.png">
+						</div>
+						<div class="span6">	
+							<p>
+								Kate Williams<br /> 
+								Applied 6-3-2013<br />
+								Recommended<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star"></span>
+							  <span class="star"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User4" class="row-fluid user">
+						<div class="span6">
+							<img src="img/serena-cho.png">
+						</div>
+						<div class="span6">
+							<p>
+								Serena Cho<br /> 
+								Applied 6-2-2013<br />
+								Maybe<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User5" class="row-fluid user">
+						<div class="span6">
+							<img src="http://placehold.it/118x118">
+						</div>
+						<div class="span6">
+							<p>
+								Jerod Andrius Venema<br /> 
+								Applied 6-2-2013<br />
+								Maybe<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User6" class="row-fluid user">
+						<div class="span6">
+							<img src="http://placehold.it/118x118">
+						</div>
+						<div class="span6">
+							<p>
+								User 6<br /> 
+								Applied 6-2-2013<br />
+								Maybe<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User7" class="row-fluid user">
+						<div class="span6">
+							<img src="http://placehold.it/118x118">
+						</div>
+						<div class="span6">
+							<p>
+								User 7<br /> 
+								Applied 6-2-2013<br />
+								Maybe<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							</span>
+						</div>
+					</div>
+					<div id="User8" class="row-fluid user">
+						<div class="span6">
+							<img src="http://placehold.it/118x118">
+						</div>
+						<div class="span6">
+							<p>
+								User 8<br /> 
+								Applied 6-2-2013<br />
+								Maybe<br />
+							</p>
+							<span class="rating">
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							  <span class="star active"></span>
+							</span>
+						</div>
+					</div>
+				</div><!-- /UserList -->
+			</div><!-- /#SidebarRight span3 -->
+		</div><!-- /row -->
+
+	</div><!-- /container -->
+
+<div class="clearfix">&nbsp;</div>
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<ul class="fnav span9">
+				<li><strong>Help:</strong></li>
+				<li><a href="#">FAQs and Tutorials</a></li>
+				<li><a href="#">Contact Support</a></li>
+			</ul>
+			<ul class="fnav social span3">
+				<li><strong>Follow Us:</strong></li>
+				<li><a class="facebook" href="#">Facebook</a></li>
+				<li><a class="linkedin" href="#">Linkedin</a></li>
+				<li><a class="twitter" href="#">Twitter</a></li>
+				<li><a class="googleplus" href="#">Google Plus</a></li>
+			</ul>
+		</div>
+		<div class="row">
+			<ul class="fnav fnav2">
+				<li><strong>About Us:</strong></li>
+				<li><a href="#">About the Company</a></li>
+				<li><a href="#">Management Team</a></li>
+				<li><a href="#">Newsroom</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Jobs</a></li>
+				<li><a href="#">Sitemap</a></li>
+			</ul>
+		</div>
+		<hr class="inset">
+		<div class="row fnav copy">
+			<div class="span9">&copy; 2013 Your Company, Inc. All Rights Reserved.</div>
+			<div class="span3 terms right">Terms of Service . Privacy Policy</div>
+		</div>
+	</div>
+</div>
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/bootstrap/bootstrap-transition.js"></script>
+<script src="js/bootstrap/bootstrap-alert.js"></script>
+<script src="js/bootstrap/bootstrap-modal.js"></script>
+<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+<script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+<script src="js/bootstrap/bootstrap-tab.js"></script>
+<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap/bootstrap-popover.js"></script>
+<script src="js/bootstrap/bootstrap-button.js"></script>
+<script src="js/bootstrap/bootstrap-collapse.js"></script>
+<script src="js/bootstrap/bootstrap-carousel.js"></script>
+<script src="js/bootstrap/bootstrap-typeahead.js"></script>
+<script src="js/bootstrap/bootstrap-datepicker.js"></script>
+<script src="video-js/video.js"></script>
+<script>
+  videojs.options.flash.swf = "video-js/video-js.swf"
+</script>
+<script>
+  $(function () {
+    $('#AggregateVideo a:last').tab('show');
+  })
+</script>
+<script>
+$(".response-tab").click(function(){
+    var tab_title;
+    tab_title = $(this).html();
+    $(".question-title").html(tab_title + ' <b class="caret"></b>');
+    });
+</script>
+<script>
+	$("#ResponseType1.active").ready(function(){
+	    $("#IndividualResponsePager").addClass("hide-pager");
+	    });
+	$("#ResponseType1.active").click(function(){
+	    $("#IndividualResponsePager").addClass("hide-pager");
+	    });
+	$("#ResponseType2").click(function(){
+	    $("#IndividualResponsePager.hide-pager").removeClass("hide-pager");
+	    });
+</script>
+<script>
+	$("ul.pager li").click(function(){    
+		$("ul.pager li").removeClass("active");
+    });
+</script>
+
+<script>
+$(function(){
+    $('div#UserList') .css({'height': (($("div#Responses").height()))+'px'});
+    $(window).resize(function(){
+        $('div#UserList') .css({'height': (($("div#Responses").height()))+'px'});
+    });
+});
+</script>
+</body>
+</html>
